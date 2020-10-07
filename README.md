@@ -2,7 +2,7 @@
 
 ## A simple JSON based local database
 
-### Version: 1.0.2
+### Version: 1.0.3
 
 ### Languages: 
 * Typescript,
