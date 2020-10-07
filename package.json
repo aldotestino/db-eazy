@@ -1,0 +1,30 @@
+{
+  "name": "db-eazy",
+  "version": "1.0.1",
+  "description": "A simple JSON based local database",
+  "main": "out/index.js",
+  "scripts": {
+    "start": "tsc && node out/index.js"
+  },
+  "keywords": [
+    "database"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aldotestino/db-eazy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aldotestino/db-eazy/issues"
+  },
+  "homepage": "https://github.com/aldotestino/db-eazy#readme",
+  "author": "aldotestino",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.11.5",
+    "typescript": "^4.0.3",
+    "@types/nanoid": "^2.1.0"
+  },
+  "dependencies": {
+    "nanoid": "^3.1.12"
+  }
+}
