@@ -1,6 +1,6 @@
 {
   "name": "db-eazy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple JSON based local database",
   "main": "out/index.js",
   "scripts": {
