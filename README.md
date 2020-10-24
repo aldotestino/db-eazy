@@ -1,8 +1,8 @@
-# db-eazy by aldotestino
+# [db-eazy](https://db-eazy.vercel.app/) by aldotestino
 
 ## A simple JSON based local database
 
-### Version: 1.0.3
+### Version: 1.0.4
 
 ### Languages: 
 * Typescript,

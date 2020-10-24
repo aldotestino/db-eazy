@@ -1,6 +1,6 @@
 {
   "name": "db-eazy",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple JSON based local database",
   "main": "out/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/aldotestino/db-eazy/issues"
   },
-  "homepage": "https://github.com/aldotestino/db-eazy#readme",
+  "homepage": "https://db-eazy.vercel.app/",
   "author": "aldotestino",
   "license": "MIT",
   "devDependencies": {

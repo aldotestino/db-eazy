@@ -3,7 +3,7 @@
   <main class="main">
     <header class="header">
       <h1>A simple JSON based local database</h1>
-      <div class="tag">v 1.0.3</div>
+      <div class="tag">v 1.0.4</div>
     </header>
 
     <section class="section" id="installation">
