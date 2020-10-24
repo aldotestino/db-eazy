@@ -29,7 +29,7 @@
   <span class="prop">email</span>: <span class="const">string</span>;
 }
 
-<span class="lang">const</span> <span class="const">users</span> <span class="sign">=</span> <span class="prop">db</span>.<span class="func">get</span>(<span class="string">'users'</span>);<i class="fas fa-copy" @click="copyToClipboard(2)"></i></pre>
+<span class="lang">const</span> <span class="const">users</span> <span class="sign">=</span> <span class="prop">db</span>.<span class="func">get</span>&lt;<span class="const">User</span>&gt;(<span class="string">'users'</span>);<i class="fas fa-copy" @click="copyToClipboard(2)"></i></pre>
     </section>
 
     <section class="section" id="insert">
