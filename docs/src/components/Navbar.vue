@@ -1,6 +1,9 @@
 <template>
   <nav class="navbar">
-    <a class="title" href="/"><img src="../assets/database.svg"/>&nbsp;db-eazy</a>
+    <a class="title" href="/">
+      <img src="../assets/database.svg"/>
+      <span>&nbsp;db-eazy</span>
+    </a>
     <div class="right">
       <div class="input-container">
         <img src="../assets/bx-search.svg" alt="" srcset="">
@@ -137,6 +140,33 @@ export default {
       }
       #gh{
         color: #000;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .navbar {
+    padding: 0 5px;
+    .title {
+      span {
+        display: none
+      }
+    }
+    .right {
+      .input-container {
+        margin-left: 5px;
+        margin-right: 5px;
+
+        .input {
+          width: 100%
+        }
+      }
+
+      .links {
+        #npm {
+          margin-right: 5px;
+        }
       }
     }
   }

@@ -273,4 +273,49 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 950px) {
+  .main {
+    padding: 20px 5px;
+
+    .header {
+      flex-direction: column;
+      h1 {
+        font-size: 36px;
+        text-align: center;
+        margin-right: 0px;
+      }
+      .tag {
+        margin-top: 5px;
+        align-self: center
+      }
+    }
+
+    .section {
+      padding-top: 30px;
+      
+      h2 {
+        font-size: 32px;
+      }
+
+      .code {
+        overflow-x: auto;
+
+        i {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .footer {
+    flex-direction: column;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    .links {
+      padding-top: 10px;
+    }
+  }
+}
 </style>
