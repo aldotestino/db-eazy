@@ -191,6 +191,7 @@ export default {
     .code {
       position: relative;
       padding: 20px;
+      width: 100%;
       max-width: 700px;
       font-size: 20px;
       background-color: #F6F8FA;
@@ -276,7 +277,7 @@ export default {
 
 @media screen and (max-width: 950px) {
   .main {
-    padding: 20px 5px;
+    padding: 50px 5px;
 
     .header {
       flex-direction: column;
@@ -292,10 +293,16 @@ export default {
     }
 
     .section {
-      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       
       h2 {
         font-size: 32px;
+      }
+
+      .description {
+        text-align: center;
       }
 
       .code {
