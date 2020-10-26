@@ -29,7 +29,6 @@ export default {
     function startQuery() {
       const reg = new RegExp(state.query, 'i');
       state.results = state.functions.filter(f => f.name.match(reg));
-      console.log(state.results);
     }
 
     return {

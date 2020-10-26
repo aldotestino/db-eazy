@@ -51,7 +51,7 @@
 <span class="prop">users</span>.<span class="func">findAll</span>();
 
 <span class="comment">// returns the user with that specific id</span>
-<span class="prop">users</span>.<span class="func">findAll</span>(<span class="string">'id_of_the_user'</span>);
+<span class="prop">users</span>.<span class="func">findOne</span>(<span class="string">'id_of_the_user'</span>);
 
 <span class="comment">// returns an array of users</span>
 <span class="comment">// that matches the query parameter</span>
@@ -118,7 +118,7 @@ export default {
     
     onMounted(() => {
       window.addEventListener('hashchange', clearQuery);
-    })
+    });
 
     function copyToClipboard(id) {
       const range = document.createRange();
