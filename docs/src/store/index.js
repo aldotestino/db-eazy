@@ -1,6 +1,7 @@
 import { reactive } from 'vue';
 
 const state = reactive({
+  downloads: 0,
   query: '',
   results: [],
   functions: [

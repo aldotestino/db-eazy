@@ -2,8 +2,14 @@
   <Navbar />
   <main class="main">
     <header class="header">
-      <h1>A simple JSON based local database</h1>
-      <div class="tag">v 1.0.4</div>
+      <div class="title">
+        <h1>A simple JSON based local database</h1>
+        <div class="tag">v 1.0.4</div>
+      </div>
+      <div class="description">
+        <p>This package has {{state.downloads}} downloads on npm</p>
+        <p>Support it on Github <span class="gh-btn"><a class="github-button" href="https://github.com/aldotestino/db-eazy" data-color-scheme="dark" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star aldotestino/db-eazy on GitHub">Star</a></span></p>
+      </div>    
     </header>
 
     <section class="section" id="installation">
@@ -97,7 +103,7 @@
       <p>Made with Vue <i class="fab fa-vuejs"></i></p>
     </div>
     <div class="links">
-      <p><i class="fab fa-github"></i> <a href="https://github.com/aldotestino" target="blank">Github</a></p>
+      <p><a class="github-button" href="https://github.com/aldotestino" data-color-scheme="light" data-size="large" data-show-count="true" aria-label="Follow @aldotestino on GitHub">Follow @aldotestino</a></p>
       <p><i class="fab fa-npm"></i> <a href="https://www.npmjs.com/~aldotestino" target="blank">Npm</a></p>
       <p><i class="fab fa-twitter"></i> <a href="https://www.twitter.com/aldotestino4" target="blank">Twitter</a></p>
     </div>
@@ -109,6 +115,8 @@ import state from '@/store/index';
 import Navbar from '@/components/Navbar.vue'
 import { onMounted, onUnmounted } from 'vue';
 
+const base_url = 'https://cors-anywhere.herokuapp.com/https://npm-stat.com/api/download-counts?package=db-eazy&from=2020-10-07&until=';
+
 export default {
   name: 'App',
   components: {
@@ -117,8 +125,22 @@ export default {
   setup() {
     
     onMounted(() => {
+      getDownloads();
       window.addEventListener('hashchange', clearQuery);
     });
+
+    async function getDownloads() {
+      const url = `${base_url}${getDate()}`;
+      const res = await fetch(url);
+      const json = await res.json();
+      const dbez = json['db-eazy'];
+      state.downloads = Object.values(dbez).reduce((s,a) => s += a, 0);
+    }
+
+    function getDate() {
+      const d = new Date();
+      return d.toISOString().slice(0,10);
+    }
 
     function copyToClipboard(id) {
       const range = document.createRange();
@@ -136,7 +158,8 @@ export default {
     }
     
     return {
-      copyToClipboard
+      copyToClipboard,
+      state
     }
   }
 }
@@ -160,19 +183,35 @@ export default {
   padding-left: 100px;
 
   .header{
-    display: flex;
-    h1{
-      font-size: 40px;
-      font-weight: 600;
-      margin-right: 20px;
+    .title {
+      display: flex;
+      h1{
+        font-size: 40px;
+        font-weight: 600;
+        margin-right: 10px;
+      }
+      .tag{
+        align-self: flex-start;
+        right: 0;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 30px;
+        background-color: rebeccapurple;
+      }
     }
-    .tag{
-      align-self: flex-start;
-      right: 0;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 30px;
-      background-color: rebeccapurple;
+    
+    .description{
+      font-size: 24px;
+      margin-top: 10px;
+      color: rebeccapurple;
+      p {
+        &:nth-child(2) {
+          margin-top: 5px;
+          .gh-btn {
+            margin-left: 10px;
+          }
+        }
+      }
     }
   }
 
@@ -280,15 +319,22 @@ export default {
     padding: 50px 5px;
 
     .header {
-      flex-direction: column;
-      h1 {
-        font-size: 36px;
-        text-align: center;
-        margin-right: 0px;
+      .title {
+        flex-direction: column;
+        h1 {
+          font-size: 36px;
+          text-align: center;
+          margin-right: 0px;
+        }
+        .tag {
+          margin-top: 5px;
+          align-self: center
+        }
       }
-      .tag {
-        margin-top: 5px;
-        align-self: center
+      .description {
+        p {
+          text-align: center;
+        }
       }
     }
 
