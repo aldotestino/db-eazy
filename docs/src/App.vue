@@ -1,4 +1,5 @@
 <template>
+<div>
   <Navbar />
   <main class="main">
     <header class="header">
@@ -98,7 +99,7 @@
   </main>
   <footer class="footer">
     <div class="infos">
-      <p class="name">aldotestino ©2020 - <a href="https://github.com/aldotestino/db-eazy/blob/master/LICENSE" target="blank">MIT license</a></p>
+      <p class="name">aldotestino ©{{getYear()}} - <a href="https://github.com/aldotestino/db-eazy/blob/master/LICENSE" target="blank">MIT license</a></p>
       <p>Politecnico di Bari - Ingegneria Informatica e dell' Automazione</p>
       <p>Made with Vue <i class="fab fa-vuejs"></i></p>
     </div>
@@ -108,6 +109,7 @@
       <p><i class="fab fa-twitter"></i> <a href="https://www.twitter.com/aldotestino4" target="blank">Twitter</a></p>
     </div>
   </footer>
+  </div>
 </template>
 
 <script>
@@ -137,6 +139,10 @@ export default {
       state.downloads = Object.values(dbez).reduce((s,a) => s += a, 0);
     }
 
+    function getYear() {
+      return new Date().getFullYear()
+    }
+
     function getDate() {
       const d = new Date();
       return d.toISOString().slice(0,10);
@@ -159,7 +165,8 @@ export default {
     
     return {
       copyToClipboard,
-      state
+      state,
+      getYear
     }
   }
 }
