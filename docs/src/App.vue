@@ -29,9 +29,9 @@
 
 <span class="comment">// path to db folder</span>
 <span class="comment">// (the db folder will be automatically created)</span>
-<span class="lang">const</span> <span class="const">db</span> <span class="sign">=</span> <span class="lang">Database</span>(<span class="prop">path</span>.<span class="func">join</span>(<span class="prop">__dirname</span>, <span class="string">'..'</span>)); 
+<span class="lang">const</span> <span class="const">db</span> <span class="sign">=</span> <span class="lang">new</span> <span class="const">Database</span>(<span class="prop">path</span>.<span class="func">join</span>(<span class="prop">__dirname</span>, <span class="string">'..'</span>)); 
 
-<span class="lang">type</span> <span class="const">User</span> <span class="sign">=</span> {
+<span class="lang">interface</span> <span class="const">User</span> <span class="sign">=</span> {
   <span class="prop">name</span>: <span class="const">string</span>;
   <span class="prop">email</span>: <span class="const">string</span>;
 }
@@ -238,7 +238,7 @@ export default {
       position: relative;
       padding: 20px;
       width: 100%;
-      max-width: 700px;
+      max-width: 750px;
       font-size: 20px;
       background-color: #F6F8FA;
       border-radius: 10px;

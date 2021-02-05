@@ -19,14 +19,14 @@ npm install db-eazy
 
 ### Quick Start
 
-```javascript
+```typescript
 import { Database } from 'db-eazy';
 import path from 'path';
 
 // path to db folder (the db folder will be automatically created)
 const db = new Database(path.join(__dirname, '..')); 
 
-type User = {
+interface User = {
   name: string;
   email: string;
 }
@@ -36,7 +36,7 @@ const users = db.get<User>('users');
 
 ### Insert
 
-```javascript
+```typescript
 // returns the object that has been inserted
 users.insert({
     name: 'Dannel Bakesef',
@@ -46,39 +46,39 @@ users.insert({
 
 ### Query
 
-```javascript
+```typescript
 // returns an array of users
 users.findAll(); 
 
 // returns the user with that specific id
-users.findOne('id_of_the_user') 
+users.findOne('id_of_the_user'); 
 
 // returns an array of users that matches the query parameter
-users.find({property: 'name', value: 'John'}) 
+users.find({property: 'name', value: 'John'}); 
 ```
 
 ### Update
 
-```javascript
+```typescript
 // update the specific user, setting the passed property 
 // with the new value and returns the updated user
 users.updateOne('id_of_the_user', {type: '$set', property: 'email', value: 'new_email'}); 
 
 // if the property is of type number increments 
 // it by one and returns the updated user
-users.updateOne('id_of_the_user', {type: '$inc', property: 'age'}) 
+users.updateOne('id_of_the_user', {type: '$inc', property: 'age'});
 ```
 
 ### Remove
 
-```javascript
+```typescript
 // removes the specific user and returns it
 users.remove('id_of_the_user'); 
 ```
 
 ### Unique property
 
-```javascript
+```typescript
 // set the email as an unique property
 // (checks for updates too)
 users.setUniqueProperty('email'); 
